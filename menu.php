@@ -28,6 +28,7 @@ $boasVindas = "Olá, {$usuario['nome']}!";
         position:fixed;
         top:0;
         box-shadow:#000 0px -30px 50px;
+        z-index:999;
     }
     #menu ul{
         display:flex;

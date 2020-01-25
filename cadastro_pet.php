@@ -16,52 +16,7 @@
   <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <style>
-    .formulario{
-      width:100%;
-      display:flex;
-      flex-direction:row;
-      justify-content:space-between;
-      padding:20px;
-    }
-    .esquerda{
-      width:100%;
-    }
-    .direita{
-      width:100%;
-    }
-    .form-row{
-      width:100%;
-    }
-    .form-group{
-      width:90%;
-    }
-    .engloba-radios-horizontal{
-      display:flex;
-      flex-direction:row;
-      justify-content:space-between;
-      padding-left:6%;
-      padding-right:12%;
-    }
-    .engloba-radios-vertical{
-      display:flex;
-      flex-direction:column;
-      justify-content:space-around;
-      padding-left:6%;
-    }
-    #btn-Cad {
-      margin-right:10%;
-    }
-    body{
-      background: linear-gradient(#ffffff12,#fff), url(img/fundo.jpeg);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-    }
-    h1{
-      margin-top:100px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -133,13 +88,7 @@
 
           <div class="form-group">
             <label for="raca">Raça</label>  
-            <select class="form-control" name="raca" id="raca">
-              <option>Micro</option>
-              <option>Pequeno</option>
-              <option>Médio</option>
-              <option>Grande</option>
-              <option>Gigante</option>
-            </select>
+            <input type="text" class="form-control" name="raca" id="raca">
           </div>
           
           <div class="form-group">
@@ -257,6 +206,20 @@
               <option>Príncipe</option>
             </select>
           </div> 
+
+          <div class="form-group">
+            <label for="observacao">Observações</label>  
+            <textarea class="form-control" name="observacao" id="observacao" rows="8"></textarea>
+          </div>
+
+          <div id="assinatura" class="text-right">
+            <hr>
+            <p id="desc-assinatura">
+              Assinatura
+            </p>
+          </div>
+
+
 
           <br clear="both">
           <br clear="both">

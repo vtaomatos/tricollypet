@@ -13,6 +13,17 @@ if (!empty($_GET['cadastrar'])) {
         'dt_nasc' => 'Data de nascimento'
     );
 
+    foreach ($obrigatorios as $campo => $alias) {
+        if (empty($_GET[$campo])) {
+            $msg .= "Preencha o campo $alias. <br   >";
+        }
+    }
+
+    if (!empty($msg)) {
+        header("location: cadastro_pet.php?msg=$msg");
+        exit;
+    }
+
     if (!empty($_GET['nome'])) {
         $insert['nome'] = $_GET['nome'];
     }
@@ -58,21 +69,10 @@ if (!empty($_GET['cadastrar'])) {
     if (!empty($_GET['tipo_banho'])) {
         $insert['tipo_banho'] = $_GET['tipo_banho'];
     }
-
-    foreach ($obrigatorios as $campo => $alias) {
-        if (empty($_GET[$campo])) {
-            $msg .= "Preencha o campo $alias. <br   >";
-        }
+    if (!empty($_GET['observacao'])) {
+        $insert['observacao'] = $_GET['observacao'];
     }
-
-    if (!empty($msg)) {
-        header("location: cadastro_pet.php?msg=$msg");
-        exit;
-    }
-
-    // echo_r(db_insert('Cadastro_Pet',$insert,true,true));exit;
-
-
+    // db_insert('Cadastro_Pet',$insert,0,true);exit;
     if ($codigo = db_insert('Cadastro_Pet',$insert,true)) {
         $msg = "O PET foi cadastrado. [ {$codigo} - {$_GET['nome']} ] ";
         header("location: cadastro_pet.php?msg=$msg&success=1");

@@ -103,7 +103,7 @@ function db_update($nome_tabela, $campos, $where, $echo=false) {
         if ($campos[$valor] == null) {
             $set[] = $valor . ' = NULL';
         } else {
-            $set[] = $valor . ' = "'. addslashes($campos[$valor]).'"';
+            $set[] = $valor . ' = "'. msqli_real_escape_string($campos[$valor]).'"';
         }
     });
     $campos = join(", ", $set);
@@ -114,7 +114,7 @@ function db_update($nome_tabela, $campos, $where, $echo=false) {
         if ($where[$valor] == null) {
             $condicao[] = $valor . ' = NULL';
         } else {
-            $condicao[] = $valor . ' = "'. addslashes($where[$valor]).'"';
+            $condicao[] = $valor . ' = "'. msqli_real_escape_string($where[$valor]).'"';
         }
     });
     $where = join(" AND ", $condicao);
@@ -147,7 +147,7 @@ function db_delete ($tabela_nome, $where=array()) {
 
     $condicao = array();
     array_walk($where, function($valor, $chave) use (&$condicao){
-        $condicao[] = $chave . ' = "'. addslashes($valor).'"';
+        $condicao[] = $chave . ' = "'. mysqli_real_escape_string($valor).'"';
     });
 
     $where = join(" AND ", $condicao);

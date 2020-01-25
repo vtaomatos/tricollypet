@@ -1,7 +1,7 @@
 <?php
-
-session_start();
-
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,17 +10,37 @@ session_start();
         <meta charset="utf-8"/>
         <title>Login Tricollypet Gestão</title>
         <style>
+            html{
+                height:100%;
+            }
+            body{
+                display:flex;
+                flex-direction:row;
+                justify-content:space-around;
+                align-items: center;
+                height:100%;
+            }
             .centro{
                 display:flex;
                 flex-direction:row;
                 flex-wrap:wrap;
                 background-color:rgba(0,0,0,.2);
-                width:300px;
+                width:350px;
                 padding:30px;
                 border-radius:20px; 
                 box-shadow: 1px 1px 3px #000;
                 align-items: center;
-                justify-content:space-aroundç;
+                justify-content:space-around;
+            }
+            form{
+                width:100%;
+            }
+            input{
+                display:block;
+                width:100%;
+            }
+            .entrar{
+                margin-top:20px;
             }
         </style>
         
@@ -28,18 +48,27 @@ session_start();
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
+        <h1>Tricollypet Login</h1>
         <div class="centro">
-            <form action="login.php" method="POST"> 
-                <div class="aviso"></div>
+            <form action="login.php" method="POST">
+            <?php
+            if ($_SESSION['nao_autenticado']) {
+            ?>
+                <div class="aviso alert alert-danger">Usuário e/ou senha inválidos.</div>
+            <?php
+                unset($_SESSION['nao_autenticado']);
+            }
+            ?>
                 <div>
-                    <label>
+                    <label for="login">
                         Login
-                        <input type="text" name="login" class="login">
                     </label>
-                    <label>
+                    <input type="text" id="login" name="login" class="login">
+                    <label for="senha">
                         Senha
-                        <input type="password" name="senha" class="senha">
                     </label>
+                    <input type="password" name="senha" class="senha">
+                    <input type="submit" class="entrar btn btn-info" value="Entrar">
                 </div>
             </form>
         </div>

@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 require_once "functions.php";
 
 if (empty($_POST['login']) || empty($_POST['senha'])) {
@@ -7,8 +9,9 @@ if (empty($_POST['login']) || empty($_POST['senha'])) {
     header("location: index.php");
     exit;
 } else {
-    $login = mysql_real_scape_string($conexao, $_POST['login']);
-    $senha = mysql_real_scape_string($conexao, $_POST['senha']);
+    
+    $login = mysqli_real_escape_string($conexao, $_POST['login']);
+    $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 
     $sql = '
         SELECT
@@ -16,9 +19,9 @@ if (empty($_POST['login']) || empty($_POST['senha'])) {
         FROM
             _Usuario
         WHERE
-            login = :login
+            login = ":login"
             AND
-            senha = :senha
+            senha = md5(":senha")
     ';
     $usuario = db_select_one($sql, array(
         'login' => $login,

@@ -23,19 +23,16 @@
   <?php
       require_once "menu.php";
   ?>
-  <div class="container">
-
-    <h1 class="text-center">Tricolly - Cadastro de PET</h1>
-
-    <?php
-      if (!empty($_GET['msg'])) { ?>
-        <br clear="both">
-        <div class="text-center alert alert-<?php echo (!empty($_GET['success'])) ? "success" : "danger"?>"><?php echo $_GET['msg']; ?></div> 
-    <?php
-      }
-      $_GET['msg'] = "";
-    ?>
-    <div class="row">
+  <div class="container" id="conteiner-geral">
+      <h1 class="text-center">Tricolly - Cadastro de PET</h1>
+      <?php
+        if (!empty($_GET['msg'])) { ?>
+          <br clear="both">
+          <div class="text-center alert alert-<?php echo (!empty($_GET['success'])) ? "success" : "danger"?>"><?php echo $_GET['msg']; ?></div> 
+      <?php
+        }
+        $_GET['msg'] = "";
+      ?>
       <form class="formulario container" method="GET" action="CRUD.php">
         <div class="esquerda">
           <div class="form-row">
@@ -228,7 +225,6 @@
           <button type="submit" class="btn btn-info float-right col-md-6" id="btn-Cad">Cadastrar</button>
         </div>
       </form>
-    </div>
   </div>
   <script src="bootstrap/dist/js/bootstrap.min.js"></script>
 

@@ -1,5 +1,4 @@
 <?php
-  require_once "functions.php";
   require_once "check_logado.php";
 ?>
 <!DOCTYPE html>
@@ -46,7 +45,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="dt_nasc">Data de Nascimento</label>
-              <input type="date" class="form-control" placeholder="XX/XX/XXXX" name="dt_nasc" id="dt_nasc" >
+              <input type="date" class="form-control" value="" name="dt_nasc" id="dt_nasc" >
             </div>
           </div>
 
@@ -131,12 +130,12 @@
         <div class="direita">
           <div class="form-group">
             <label for="">Alergias</label>
-            <input type="text-area" class="form-control" id="alergiar" placeholder="" name="alergiar">
+            <input type="text" class="form-control" id="alergiar" placeholder="" name="alergiar">
           </div>
 
           <div class="form-group">
             <label for="">Doenças</label>
-            <input type="text-area" class="form-control" id="doencas" placeholder="" name="doencas">
+            <input type="text" class="form-control" id="doencas" placeholder="" name="doencas">
           </div>
 
           <legend class="col-form-label">Carteirinha de Vacinação</legend>

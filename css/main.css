@@ -49,3 +49,49 @@
     margin-top:150px;
     width:90%;
   }
+  .h1-login{
+    margin-top:initial;
+    margin-bottom:30px;
+    text-align:initial;
+  }
+  html{
+    min-height:100%;
+  }
+  .html-tela{
+    height:100%;
+  }
+  body{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-around;
+      align-items: center;
+      min-height:100%;
+  }
+  .centro{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;
+      background-color:rgba(0,0,0,.2);
+      width:400px;
+      padding:30px;
+      border-radius:20px; 
+      box-shadow: 1px 1px 3px #000;
+      align-items: center;
+      justify-content:space-around;
+  }
+  form{
+      width:100%;
+  }
+  .login,.senha{
+      display:block;
+      width:100%;
+      margin-bottom: 20px;
+  }
+  .entrar{
+      width:50%;
+  }
+  .div-centraliza{
+    display:flex;
+    justify-content: center;
+    margin-top: 40px;
+  }

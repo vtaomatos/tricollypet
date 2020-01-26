@@ -2,6 +2,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
+require_once "functions.php";
 $sql = '
     SELECT
         nome_usuario nome

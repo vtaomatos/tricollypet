@@ -123,3 +123,15 @@ li{
     list-style:none;
     align-items:center;
 }
+.form-cadastro-usuario>.form-group{
+  width:50%;
+  min-width:350px;
+}
+.form-cadastro-usuario>.form-group input{
+  width:90%;
+}
+#div-cadastrar{
+  width:50%;
+  display:flex;
+  justify-content: flex-end;
+}

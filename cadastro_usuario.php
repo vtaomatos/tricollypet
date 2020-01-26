@@ -24,7 +24,7 @@ require_once "check_logado.php";
         <div class="container" id="conteiner-geral">
             <h1>Tricollypet - Cadastro de usuário</h1>
 
-            <form method="POST" action="CRUD.php" class="formulario container">
+            <form method="POST" action="CRUD.php" class="form-cadastro-usuario formulario container">
                 <div class="form-group">
                     <label for="nome">Nome</label>
                     <input type="text" class="form-control" id="nome" placeholder="" name="nome">
@@ -40,6 +40,9 @@ require_once "check_logado.php";
                 <div class="form-group">
                     <label for="confirma-senha">Confirme a Senha</label>
                     <input type="text" class="form-control" onspaste="return false;" id="confirma-senha" placeholder="" name="confirma_senha">
+                </div>
+                <div id="div-cadastrar" class="form-group">
+                    <input type="submit" id="cadastrar" value="Cadastrar" class="btn btn-info">
                 </div>
             </form>
         </div>

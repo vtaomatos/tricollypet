@@ -131,7 +131,14 @@ li{
   width:90%;
 }
 #div-cadastrar{
-  width:50%;
-  display:flex;
-  justify-content: flex-end;
+  margin-top:40px;
+}
+#lista-links>li{
+  margin-left: 20px;
+}
+#lista-links .selected{
+  border-bottom:solid 2px #007bff;
+}
+a:hover{
+  text-decoration:none;
 }

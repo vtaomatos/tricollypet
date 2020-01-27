@@ -17,12 +17,29 @@ $usuario = db_select_one($sql, array(
 ));
 
 $boasVindas = "Olá, {$usuario['nome']}!";
+
+$pagina = $_SERVER['PHP_SELF'];
+
 ?>
 <nav id="menu" class="alert-info">
     <div class="container">
         <ul>
             <li>
                 <?php echo $boasVindas;?>
+            </li>
+            <li>
+                <ul id="lista-links">
+                    <li <?php echo ($pagina == "/cadastro_pet.php" ) ? 'class="selected"' : "" ?>>
+                        <a href="cadastro_pet.php">
+                            Cadastro de PET
+                        </a>
+                    </li>
+                    <li <?php echo ($pagina == "/cadastro_usuario.php" ) ? 'class="selected"' : "" ?>>
+                        <a href="cadastro_usuario.php">
+                            Cadastro de Usuario
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="logout.php" class="btn btn-danger">Logout</a>

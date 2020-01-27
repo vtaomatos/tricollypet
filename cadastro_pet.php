@@ -32,7 +32,7 @@
         }
         $_GET['msg'] = "";
       ?>
-      <form class="formulario container" method="GET" action="CRUD.php">
+      <form class="formulario container" method="POST" action="CRUD.php">
         <div class="esquerda">
           <div class="form-row">
             <div class="form-group">

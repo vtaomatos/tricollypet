@@ -23,11 +23,19 @@ require_once "check_logado.php";
         ?>
         <div class="container" id="conteiner-geral">
             <h1>Tricollypet - Cadastro de usuário</h1>
+            <?php
+                if (!empty($_GET['msg'])) { ?>
+                <br clear="both">
+                <div class="text-center alert alert-<?php echo (!empty($_GET['success'])) ? "success" : "danger"?>"><?php echo $_GET['msg']; ?></div> 
+            <?php
+                }
+                $_GET['msg'] = "";
+            ?>
 
             <form method="POST" action="CRUD.php" class="form-cadastro-usuario formulario container">
                 <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome" placeholder="" name="nome">
+                    <label for="nome_usuario">Nome</label>
+                    <input type="text" class="form-control" id="nomnome_usuarioe" placeholder="" name="nome_usuario">
                 </div>
                 <div class="form-group">
                     <label for="login">Login</label>
@@ -35,11 +43,14 @@ require_once "check_logado.php";
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input type="text" class="form-control" id="senha" placeholder="" name="senha">
+                    <input type="password" class="form-control" id="senha" placeholder="" name="senha">
                 </div>
                 <div class="form-group">
                     <label for="confirma-senha">Confirme a Senha</label>
-                    <input type="text" class="form-control" onspaste="return false;" id="confirma-senha" placeholder="" name="confirma_senha">
+                    <input type="password" class="form-control" onspaste="return false;" id="confirma-senha" placeholder="" name="confirma_senha">
+                </div>
+                <div class="form-group">
+                <input type="hidden" class="form-control" placeholder="" name="cadastrar_usuario" value="1">
                 </div>
                 <div id="div-cadastrar" class="form-group">
                     <input type="submit" id="cadastrar" value="Cadastrar" class="btn btn-info">

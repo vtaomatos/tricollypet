@@ -27,6 +27,7 @@
   ?>
   <div class="container" id="conteiner-geral">
       <h1 class="text-center">Tricolly - Cadastro de PET</h1>
+      <br clear="both">
       <?php
         if (!empty($_GET['msg'])) { ?>
           <br clear="both">

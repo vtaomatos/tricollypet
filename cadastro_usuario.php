@@ -1,7 +1,6 @@
 <?php
 require_once "check_logado.php";
 require_once "menu.php";
-
 ?>
 
 <!DOCTYPE html>

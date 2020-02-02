@@ -142,3 +142,33 @@ li{
 a:hover{
   text-decoration:none;
 }
+#menu-interno{
+  float:right;
+}
+.invisivel{
+  display:none;
+}
+.list{
+  margin-top:3px;
+  border:solid 0.5px #aaa;
+  border-radius:0px 10px 10px 10px;
+  position:absolute;
+  margin:auto;
+  padding:0;
+  overflow: hidden;
+}
+.list-item{
+  padding:0 10px 0 10px;
+  height: 30px;
+  vertical-align: middle;
+  width:100%;
+}
+.list-item:hover{
+  background-color: #ddd;
+  color:#000;
+  cursor: pointer;
+}
+.list-item *{
+ vertical-align: middle;
+ color:#000;
+}

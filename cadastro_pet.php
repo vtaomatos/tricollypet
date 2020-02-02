@@ -1,5 +1,6 @@
 <?php
   require_once "check_logado.php";
+  require_once "gera_menu.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -31,6 +32,22 @@
       <?php
         }
         $_GET['msg'] = "";
+      ?>
+
+      <?php
+
+        $parametros = array();
+        // $parametros[1] = array(
+        //   'novo' => true,
+        //   'novoLink' => "cadastro_pet.php",
+        //   'novoText' => "Novo Pet"
+        // );
+        $parametros[0] = array();
+        $parametros[0]['text'] = "Lista de PETs";
+        $parametros[0]['link'] = "index.php";
+
+
+        gera_menu($parametros);
       ?>
       <form class="formulario container" method="POST" action="CRUD.php">
         <div class="esquerda">
@@ -226,6 +243,7 @@
       </form>
   </div>
   <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 

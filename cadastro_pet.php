@@ -1,6 +1,8 @@
 <?php
   require_once "check_logado.php";
   require_once "gera_menu.php";
+  require_once "menu.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -21,7 +23,7 @@
 
 <body>
   <?php
-      require_once "menu.php";
+    menu("pet");
   ?>
   <div class="container" id="conteiner-geral">
       <h1 class="text-center">Tricolly - Cadastro de PET</h1>
@@ -44,7 +46,7 @@
         // );
         $parametros[0] = array();
         $parametros[0]['text'] = "Lista de PETs";
-        $parametros[0]['link'] = "index.php";
+        $parametros[0]['link'] = "index_pet.php";
 
 
         gera_menu($parametros);

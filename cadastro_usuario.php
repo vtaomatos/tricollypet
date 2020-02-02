@@ -1,5 +1,7 @@
 <?php
 require_once "check_logado.php";
+require_once "menu.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +21,7 @@ require_once "check_logado.php";
     </head>
     <body>
         <?php
-            require_once "menu.php";
+            menu("usuario");
         ?>
         <div class="container" id="conteiner-geral">
             <h1>Tricollypet - Cadastro de usuário</h1>

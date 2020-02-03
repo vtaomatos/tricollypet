@@ -32,9 +32,9 @@ function db_select($comando, $array=array(), $cabecalho=false) {
         array_unshift($saida,$campos);
     }
 
-    // array_walk_recursive($saida, function(&$item){
-    //     $item = utf8_encode($item);
-    // });
+    array_walk_recursive($saida, function(&$item){
+        $item = utf8_encode($item);
+    });
 
     return $saida;
 }

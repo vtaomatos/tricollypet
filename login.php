@@ -30,7 +30,7 @@ if (empty($_POST['login']) || empty($_POST['senha'])) {
 
     if (!empty($usuario)) {
         $_SESSION['cd_usuario'] = $usuario['id_usuario'];
-        header("location: cadastro_pet.php");
+        header("location: index_pet.php");
         exit;
     } else {
         $_SESSION['nao_autenticado'] = true;

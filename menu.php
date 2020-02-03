@@ -30,7 +30,7 @@ function menu($pagina) {
                 <li>
                     <ul id="lista-links">
                         <li <?php echo ($pagina == "pet" ) ? 'class="selected"' : "" ?>>
-                            <a href="cadastro_pet.php">
+                            <a href="index_pet.php">
                                 Gestão de PET
                             </a>
                         </li>

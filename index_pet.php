@@ -60,7 +60,7 @@
             'raca' => "Raça"
         ), $pets, array(
             'chave' => 'pet_id',
-            'prox_page' => 'detalhes_pet.php'
+            'prox_page' => 'editar_pet.php'
         ));
         ?>
     </div>
